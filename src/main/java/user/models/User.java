@@ -1,4 +1,4 @@
-package models;
+package user.models;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ public class User {
 	String email;
 	String photoUrl;
 	String bio;
-    Address address;
+    user.models.Address address;
     List<String> friendsId;
 
     public String getUsername() {
@@ -51,11 +51,11 @@ public class User {
         this.bio = bio;
     }
 
-    public Address getAddress() {
+    public user.models.Address getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(user.models.Address address) {
         this.address = address;
     }
 
