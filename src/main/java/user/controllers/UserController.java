@@ -14,6 +14,6 @@ public interface UserController {
      * @param modifyPasswordWrapper
      */
     @PostMapping("/user/{userId}/password")
-    public ResponseEntity modifyPassword(@PathVariable final Long userId,
+    public ResponseEntity modifyPassword(@PathVariable final String userId,
                                          @RequestBody ModifyPasswordWrapper modifyPasswordWrapper);
 }
