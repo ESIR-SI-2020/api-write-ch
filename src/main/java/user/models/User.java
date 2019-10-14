@@ -3,6 +3,7 @@ package user.models;
 import java.util.List;
 
 public class User {
+    Long UserId;
 	String username;
 	String password;
 	String email;
