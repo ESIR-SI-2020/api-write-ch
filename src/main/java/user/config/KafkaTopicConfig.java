@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaAdmin;
-import user.models.User;
+import user.models.ModifiedPasswordResponse;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class KafkaTopicConfig {
     }
 
     @Bean
-    public User userTopic() {
-        return new User();
+    public ModifiedPasswordResponse responseTopic() {
+        return new ModifiedPasswordResponse();
     }
 }

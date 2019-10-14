@@ -11,10 +11,10 @@ public class KafkaProducer {
             LoggerFactory.getLogger(KafkaProducer.class);
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, ModifiedPasswordResponse> kafkaTemplate;
 
-    public void send(String payload) {
+    public void send(ModifiedPasswordResponse payload) {
         LOGGER.info("sending payload='{}'", payload);
-        kafkaTemplate.send("helloworld.t", payload);
+        kafkaTemplate.send(payload.eventName, payload);
     }
 }

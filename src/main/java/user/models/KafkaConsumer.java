@@ -19,9 +19,9 @@ public class KafkaConsumer {
             return latch;
         }
 
-        @KafkaListener(topics = "User")
-        public void receive(String payload) {
-            LOGGER.info("received payload='{}'", payload);
+        @KafkaListener(topics = "ModifiedPasswordResponse")
+        public void receive(ModifiedPasswordResponse payload) {
+            LOGGER.info("received payload='{}'", payload.eventName + " ; " + "email : "+ payload.getEmail() + "new Password : " + payload.getNewPassword());
             latch.countDown();
         }
 }
