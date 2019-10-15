@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import user.controllers.UserController;
 import user.exceptions.ResourceException;
 import user.json.ModifyPasswordWrapper;
+import user.services.UserService;
 import user.utils.Patterns;
 
 import java.util.regex.Pattern;

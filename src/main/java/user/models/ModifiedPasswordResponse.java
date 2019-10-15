@@ -1,13 +1,17 @@
 package user.models;
 
-public class ModifiedPasswordResponse {
+import org.springframework.stereotype.Component;
+
+import java.io.Serializable;
+
+@Component
+public class ModifiedPasswordResponse implements Serializable {
 
     private String email;
 
     private String newPassword;
 
-    final String eventName = "ModifiedPassword";
-
+    public String getEventName(){return "ModifiedPassword";}
     public ModifiedPasswordResponse(){}
 
     public ModifiedPasswordResponse(String email, String newPassword) {
@@ -29,5 +33,9 @@ public class ModifiedPasswordResponse {
 
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;
+    }
+    public String toString() {
+        StringBuffer sb =  new StringBuffer() ;
+        return sb.append(getEventName()).append(" ").append(email).append(" ").append(newPassword).toString() ;
     }
 }

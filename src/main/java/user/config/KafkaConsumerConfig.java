@@ -18,14 +18,14 @@ import org.springframework.beans.factory.annotation.Value;
 
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
-import user.models.KafkaConsumer;
+import user.services.KafkaConsumer;
 
 
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
 
-    @Value("${kafka.bootstrap-servers}")
+    @Value("localhost")
     private String bootstrapServers;
 
     @Bean
@@ -39,7 +39,7 @@ public class KafkaConsumerConfig {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 StringDeserializer.class);
         // allows a pool of processes to divide the work of consuming and processing records
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "helloworld");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "ModifiedPasswordResponse");
         // automatically reset the offset to the earliest offset
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
